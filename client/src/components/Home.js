@@ -26,7 +26,7 @@ const Home = () => {
 
         const timer = setTimeout(() => {
             getUser()
-        }, 800);
+        }, 500);
 
         return (() => {
             clearTimeout(timer)
@@ -117,9 +117,9 @@ const Home = () => {
 
 
     return (
-        <div className="m-4 font-sans">
+        <div className="font-sans">
             <div>
-                <div className='flex items-center justify-between '>
+                <div className='flex items-center justify-between shadow-lg p-2'>
 
                     <div>
                         <h1 className='text-4xl font-black '>Hi, <span className='text-indigo-700  '>{user?.name}</span></h1>
