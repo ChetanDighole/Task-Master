@@ -1,6 +1,8 @@
 import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 
+const BASE_URL = 'https://task-master-pi.vercel.app'
+
 const Auth = () => {
 
     const navigate = useNavigate()
@@ -20,7 +22,7 @@ const Auth = () => {
     const submitSignup = async (e) => {
         e.preventDefault()
         const { name, email, password } = inputVal
-        const data = await fetch('/signup', {
+        const data = await fetch(`${BASE_URL}/signup`, {
             method: 'POST',
             headers: {
                 "Content-Type": "application/json"
@@ -49,7 +51,7 @@ const Auth = () => {
         e.preventDefault()
         const { email, password } = inputVal
 
-        const data = await fetch('/login', {
+        const data = await fetch(`${BASE_URL}/login`, {
             method: 'POST',
             headers: {
                 "Content-Type": "application/json"

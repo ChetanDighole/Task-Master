@@ -1,4 +1,7 @@
 
+const BASE_URL = 'https://task-master-pi.vercel.app'
+
+
 export const editTitle = async (todo_id) => {
     const val= prompt("Enter todo")
 
@@ -7,7 +10,7 @@ export const editTitle = async (todo_id) => {
       
     }
 
-    await fetch(`/editTitle/${todo_id}`, {
+    await fetch(`${BASE_URL}/editTitle/${todo_id}`, {
         method: 'put',
         headers: {
             "Content-Type": "application/json"
@@ -22,7 +25,7 @@ export const editTitle = async (todo_id) => {
 }
 
 export const deleteToDo = async (todo_id) => {
-    const req = await fetch(`/deleteToDo/${todo_id}`, {
+    const req = await fetch(`${BASE_URL}/deleteToDo/${todo_id}`, {
         method: 'delete'
     })
     return req
@@ -37,7 +40,7 @@ export const editTaskFunc = async(e_id,curTask) =>{
       alert("Please enter valid task")
     }else{
       
-    await fetch(`/editTask/${e_id}/` , {
+    await fetch(`${BASE_URL}/editTask/${e_id}/` , {
         method: 'put',
         headers: {
             "Content-Type":'application/json'
@@ -56,7 +59,7 @@ export const editTaskFunc = async(e_id,curTask) =>{
 export const deleteCurrentTask = async (e, task) => {
     const val = Object.values(task)
 
-    const req = await fetch(`/deleteTask/${e}`, {
+    const req = await fetch(`${BASE_URL}/deleteTask/${e}`, {
         method: 'put',
         headers: {
             "Content-Type":'application/json'

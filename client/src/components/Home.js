@@ -4,6 +4,9 @@ import { editTitle, deleteToDo, editTaskFunc, deleteCurrentTask } from '../utils
 import { useNavigate } from 'react-router-dom'
 import logout from "../assets/logout.png"
 
+
+const BASE_URL = 'https://task-master-pi.vercel.app'
+
 const Home = () => {
 
     const navigate = useNavigate()
@@ -33,7 +36,7 @@ const Home = () => {
 
     function getUser() {
         let token = localStorage.getItem('token')
-        fetch('/validUser', {
+        fetch(`${BASE_URL}/validUser`, {
             method: 'GET',
             headers: {
                 "Content-Type": "application/json",
@@ -54,7 +57,7 @@ const Home = () => {
                 }
             })
             .then(fetchTodo => {
-                return fetch('/getTodo/' + fetchTodo.validPerson._id)
+                return fetch(`${BASE_URL}/getTodo/` + fetchTodo.validPerson._id)
             })
             .then(response => {
                 return response.json()
@@ -68,7 +71,7 @@ const Home = () => {
     }
 
     const createNewTask = async (e, i) => {
-        await fetch(`/createTask/${e}`, {
+        await fetch(`${BASE_URL}/createTask/${e}`, {
             method: 'post',
             headers: {
                 "Content-Type": "application/json"
@@ -86,7 +89,7 @@ const Home = () => {
     }
 
     const handleCreateTodo = async (useValue, user_id) => {
-        await fetch('/createTodo', {
+        await fetch(`${BASE_URL}/createTodo`, {
             method: 'post',
             headers: {
                 "Content-Type": "application/json"
@@ -100,7 +103,7 @@ const Home = () => {
     }
 
     const logoutFun = async () => {
-        const res = await fetch('/logout')
+        const res = await fetch(`${BASE_URL}/logout`)
     
         const json = await res.json()
     
