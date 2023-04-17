@@ -10,7 +10,11 @@ Task Master is a powerful productivity tool that lets you stay organized and on 
  - Responsive design for optimal use on any device.
 
  ***
- [LIVE LINK](https://task-master-cd.netlify.app/)
+ *[LIVE LINK](https://task-master-cd.netlify.app/)*
+
+ ***
+https://user-images.githubusercontent.com/113523391/232579629-a267cec6-fbf5-47c3-aa3c-273a360c65ae.mp4
+
  ***
 
 ## Technologies
