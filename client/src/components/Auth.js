@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 
-const BASE_URL = 'https://task-master-pi.vercel.app'
+const BASE_URL = 'https://task-master-ten-tawny.vercel.app'
 
 const Auth = () => {
 

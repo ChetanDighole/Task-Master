@@ -5,7 +5,7 @@ import { useNavigate } from 'react-router-dom'
 import logout from "../assets/logout.png"
 
 
-const BASE_URL = 'https://task-master-pi.vercel.app'
+const BASE_URL = 'https://task-master-ten-tawny.vercel.app'
 
 const Home = () => {
 
